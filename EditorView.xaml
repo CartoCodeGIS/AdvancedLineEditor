@@ -1,0 +1,24 @@
+<UserControl x:Class="LineEditor.EditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Loaded="RefreshClicked">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel x:Name="Form" Margin="14">
+            <TextBlock TextWrapping="Wrap" Text="Select one feature in Line A and one in Line B. Line B moves to the measured point on Line A with its length, shape, and angle preserved." />
+            <Button Content="Refresh layers" Click="RefreshClicked" HorizontalAlignment="Left" Margin="0,12,0,0" Padding="8,3" />
+            <Label Content="Line _A" Target="{Binding ElementName=LineALayer}" Margin="0,8,0,0" />
+            <ComboBox x:Name="LineALayer" DisplayMemberPath="Name" />
+            <Label Content="Line _B" Target="{Binding ElementName=LineBLayer}" />
+            <ComboBox x:Name="LineBLayer" DisplayMemberPath="Name" />
+            <Label Content="_Distance along Line A (feet)" Target="{Binding ElementName=Distance}" Margin="0,8,0,0" />
+            <TextBox x:Name="Distance" />
+            <Label Content="Measure _from" Target="{Binding ElementName=Origin}" />
+            <ComboBox x:Name="Origin" SelectedIndex="0">
+                <ComboBoxItem Content="Start Node" />
+                <ComboBoxItem Content="End Node" />
+            </ComboBox>
+            <Button Content="Move Line B" Click="MoveClicked" HorizontalAlignment="Left" Margin="0,14,0,0" Padding="8,3" />
+            <TextBlock x:Name="Status" TextWrapping="Wrap" Margin="0,10,0,0" AutomationProperties.LiveSetting="Polite" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

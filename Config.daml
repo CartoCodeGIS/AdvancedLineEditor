@@ -1,0 +1,35 @@
+<ArcGIS defaultAssembly="LineEditor.dll" defaultNamespace="LineEditor" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e8e97130-ea38-4111-87eb-818ed3088e53}" version="1.0" desktopVersion="3.5.0.57366">
+    <Name>Advanced Line Editor</Name>
+    <Description>Move an attached lateral to a measured position along a main line while preserving its length, shape, and angle.</Description>
+    <Image>Images\AddInDesktop32.png</Image>
+    <Author>CartoCodeGIS</Author>
+    <Company>CartoCodeGIS</Company>
+    <Date>11/18/2026</Date>
+    <Subject>Mapping</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="LineEditor_Module" className="EditorModule" autoLoad="false" caption="Advanced Line Editor">
+      <groups>
+        <group id="LineEditor_Group1" caption="Line Editing" appearsOnAddInTab="true" keytip="LE">
+          <button refID="LineEditor_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="LineEditor_ShowButton" caption="Advanced Line Editor" className="ShowEditorButton" loadOnClick="true" smallImage="GenericButtonPurple16" largeImage="GenericButtonPurple32" keytip="LE">
+          <tooltip heading="Show Advanced Line Editor">
+            Open Advanced Line Editor<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="LineEditor_Dockpane" caption="Advanced Line Editor" className="EditorPane" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="EditorView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
+
+
+
